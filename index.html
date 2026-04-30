@@ -14,22 +14,29 @@
     <!-- Dark Overlay -->
     <div id="overlay"></div>
 
-    <!-- Audio Player - Hidden -->
-    <audio id="bg-music" loop>
-        <source src="02 - Dil Diyan Gallan.flac" type="audio/flac">
-        Your browser does not support the audio element.
-    </audio>
+    <!-- Music Player -->
+<div class="music-player" id="music-player">
 
-    <!-- Custom Music Player -->
-    <div id="music-player" class="music-player">
-        <div class="player-bar">
-            <span class="now-playing">Now Playing: Anniversary Love Song</span>
-            <div class="player-controls">
-                <button id="play-pause-btn" class="player-btn">Play</button>
-                <input type="range" id="volume-slider" min="0" max="100" value="50">
-            </div>
-        </div>
+  <!-- Lyrics Popup (visible on hover) -->
+  <div class="lyrics-popup" id="lyrics-popup">
+    <div class="lyric-line prev"    id="lyric-prev"></div>
+    <div class="lyric-line current" id="lyric-current">♪ Hover to see lyrics</div>
+    <div class="lyric-line next"    id="lyric-next"></div>
+  </div>
+
+  <!-- Player Bar -->
+  <div class="player-bar">
+    <span class="now-playing">♪ Our Song</span>
+    <div class="player-controls">
+      <button class="player-btn" id="play-pause-btn" aria-label="Play/Pause">
+        <span class="btn-icon">▶</span>
+      </button>
+      <input type="range" id="volume-slider" min="0" max="100" value="30">
     </div>
+  </div>
+
+  <audio id="bg-music" src="02 - Dil Diyan Gallan.flac" type="audio/flac" loop></audio>
+</div>
 
     <!-- Navigation -->
     <nav id="nav" class="navbar">

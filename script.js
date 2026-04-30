@@ -45,41 +45,104 @@ document.addEventListener('DOMContentLoaded', function() {
     createFloatingHearts();
     
     // ====================================
-    // 2. Music Player
-    // ====================================
-    const bgMusic = document.getElementById('bg-music');
-    const playPauseBtn = document.getElementById('play-pause-btn');
-    const volumeSlider = document.getElementById('volume-slider');
-    let isPlaying = false;
-    
-    // Set initial volume
-    volumeSlider.value = 30;
-    if (bgMusic) {
-        bgMusic.volume = 0.3;
+// 2. Music Player with Synced Lyrics
+// ====================================
+
+// ┌─────────────────────────────────────────────┐
+// │  CONFIGURATION — Edit these 3 values only   │
+// └─────────────────────────────────────────────┘
+const MUSIC_CONFIG = {
+  GITHUB_USER: 'ThVariableYT',
+  REPO_NAME:   'your-repo-name',  // ← Change to your GitHub repo name
+  BRANCH:      'main',
+  LYRICS_FILE: 'lyrics.lrc'       // ← Change ONLY this to your .lrc filename
+};
+// ──────────────────────────────────────────────
+
+const bgMusic      = document.getElementById('bg-music');
+const playPauseBtn = document.getElementById('play-pause-btn');
+const volumeSlider = document.getElementById('volume-slider');
+const btnIcon      = playPauseBtn.querySelector('.btn-icon');
+const lyricPrev    = document.getElementById('lyric-prev');
+const lyricCurrent = document.getElementById('lyric-current');
+const lyricNext    = document.getElementById('lyric-next');
+let isPlaying = false;
+let lrcLines  = [];
+
+// Initial volume
+volumeSlider.value = 30;
+if (bgMusic) bgMusic.volume = 0.3;
+
+// --- Play / Pause ---
+playPauseBtn.addEventListener('click', function () {
+  if (!bgMusic) return;
+  if (isPlaying) {
+    bgMusic.pause();
+    isPlaying = false;
+    btnIcon.textContent = '▶';
+  } else {
+    bgMusic.play()
+      .then(() => { isPlaying = true; btnIcon.textContent = '⏸'; })
+      .catch(e => console.log('Audio autoplay blocked:', e));
+  }
+});
+
+bgMusic.addEventListener('ended', () => {
+  isPlaying = false;
+  btnIcon.textContent = '▶';
+});
+
+// --- Volume ---
+volumeSlider.addEventListener('input', function () {
+  if (bgMusic) bgMusic.volume = this.value / 100;
+});
+
+// --- LRC Parser ---
+function parseLRC(text) {
+  const timeRegex = /\[(\d{2}):(\d{2})\.(\d{2,3})\]/g;
+  const result = [];
+  for (const line of text.split('\n')) {
+    const matches = [...line.matchAll(timeRegex)];
+    const lyricText = line.replace(timeRegex, '').trim();
+    if (!lyricText || !matches.length) continue;
+    for (const m of matches) {
+      const time = parseInt(m[1]) * 60 + parseInt(m[2]) + parseInt(m[3].padEnd(3,'0')) / 1000;
+      result.push({ time, text: lyricText });
     }
-    
-    playPauseBtn.addEventListener('click', function() {
-        if (!bgMusic) return;
-        
-        if (isPlaying) {
-            bgMusic.pause();
-            playPauseBtn.textContent = 'Play';
-        } else {
-            bgMusic.play().then(() => {
-                isPlaying = true;
-                playPauseBtn.textContent = 'Pause';
-            }).catch(e => {
-                console.log('Audio autoplay blocked:', e);
-            });
-        }
-    });
-    
-    volumeSlider.addEventListener('input', function() {
-        if (bgMusic) {
-            bgMusic.volume = this.value / 100;
-        }
-    });
-    
+  }
+  return result.sort((a, b) => a.time - b.time);
+}
+
+// --- Fetch Lyrics from GitHub Raw ---
+const lyricsURL = `https://raw.githubusercontent.com/${MUSIC_CONFIG.GITHUB_USER}/${MUSIC_CONFIG.REPO_NAME}/${MUSIC_CONFIG.BRANCH}/${MUSIC_CONFIG.LYRICS_FILE}`;
+
+lyricCurrent.textContent = '♪ Loading lyrics…';
+fetch(lyricsURL)
+  .then(r => r.ok ? r.text() : Promise.reject())
+  .then(text => {
+    lrcLines = parseLRC(text);
+    lyricCurrent.textContent = '♪ Hover while playing';
+  })
+  .catch(() => {
+    lyricCurrent.textContent = '♪ Lyrics unavailable';
+  });
+
+// --- Sync Lyrics on timeupdate ---
+function getCurrentIndex(t) {
+  let idx = 0;
+  for (let i = 0; i < lrcLines.length; i++) {
+    if (lrcLines[i].time <= t) idx = i; else break;
+  }
+  return idx;
+}
+
+bgMusic.addEventListener('timeupdate', function () {
+  if (!lrcLines.length) return;
+  const idx = getCurrentIndex(this.currentTime);
+  lyricPrev.textContent    = idx > 0                    ? lrcLines[idx - 1].text : '';
+  lyricCurrent.textContent = lrcLines[idx].text;
+  lyricNext.textContent    = idx < lrcLines.length - 1  ? lrcLines[idx + 1].text : '';
+});
     // ====================================
     // 3. Typing Effect for Tagline
     // ====================================
