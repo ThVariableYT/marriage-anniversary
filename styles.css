@@ -1320,3 +1320,16 @@ body {
     background: rgba(212, 175, 55, 0.1);
     font-weight: 500;
 }
+
+
+/* ===== CRITICAL FIX: Force all sections visible ===== */
+.section {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
+.section.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
