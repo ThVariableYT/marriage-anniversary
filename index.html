@@ -28,16 +28,44 @@
                 <button id="play-pause-btn" class="player-btn">Play</button>
                 <input type="range" id="volume-slider" min="0" max="100" value="50">
             </div>
+        <!-- Custom Music Player with Synced Lyrics -->
+    <div id="music-player" class="music-player">
+        <div class="player-wrapper">
+            <!-- Player Content -->
+            <div class="player-content">
+                <div class="player-info">
+                    <div class="song-title">Dil Diyan Gallan</div>
+                    <div class="artist-name">Anniversary Special</div>
+                </div>
+                <div class="player-controls">
+                    <button id="play-btn" class="control-btn play-icon" title="Play">▶</button>
+                    <button id="pause-btn" class="control-btn pause-icon" title="Pause">⏸</button>
+                </div>
+                <div class="time-display">
+                    <span id="current-time">0:00</span>
+                    <span id="total-time">0:00</span>
+                </div>
+            </div>
+            
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <input type="range" id="progress-bar" class="progress-bar" min="0" max="100" value="0">
+            </div>
+            
+            <!-- Volume Control -->
+            <div class="volume-container">
+                <span class="volume-icon">🔊</span>
+                <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="30">
+            </div>
+            
+            <!-- Lyrics Display (Hidden by default, shows on hover) -->
+            <div class="lyrics-display" id="lyrics-display">
+                <div class="lyrics-container" id="lyrics-container">
+                    <div class="lyrics-loading">Loading lyrics...</div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Navigation -->
-    <nav id="nav" class="navbar">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#our-story">Our Story</a></li>
-            <li><a href="#memories">Memories</a></li>
-            <li><a href="#love-letter">Love Letter</a></li>
             <li><a href="#appreciation">Appreciation</a></li>
         </ul>
     </nav>
