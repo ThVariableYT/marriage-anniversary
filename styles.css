@@ -1333,3 +1333,10 @@ body {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
+
+
+#overlay {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
