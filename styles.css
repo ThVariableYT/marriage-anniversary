@@ -14,6 +14,7 @@ body {
   color: #f0f0f0;
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
 }
 
 html, body {
@@ -29,6 +30,7 @@ section {
   transform: none !important;
   position: relative;
   min-height: auto;
+  width: 100%;
 }
 
 .section {
@@ -40,6 +42,7 @@ section {
   position: relative;
   z-index: 10;
   min-height: auto !important;
+  width: 100%;
 }
 
 /* Hide overlay completely */
@@ -92,10 +95,14 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
+  padding: 0;
 }
 
 .home-content {
   z-index: 20;
+  max-width: 800px;
+  width: 90%;
 }
 
 .anniversary-badge {
@@ -147,14 +154,19 @@ section {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Story Section */
 .story-section {
   background: linear-gradient(135deg, rgba(26, 10, 16, 0.95) 0%, rgba(45, 21, 32, 0.95) 100%);
   padding: 80px 5%;
+  width: 100%;
 }
 
 .section-title {
@@ -198,6 +210,7 @@ section {
 .memories-section {
   padding: 80px 5%;
   background: linear-gradient(135deg, rgba(26, 10, 16, 0.9) 0%, rgba(45, 21, 32, 0.9) 100%);
+  width: 100%;
 }
 
 .photo-gallery {
@@ -251,6 +264,7 @@ section {
 .love-letter-section {
   padding: 80px 5%;
   background: linear-gradient(135deg, rgba(45, 21, 32, 0.9) 0%, rgba(26, 10, 16, 0.9) 100%);
+  width: 100%;
 }
 
 .love-letter {
@@ -286,6 +300,7 @@ section {
 .appreciation-section {
   padding: 80px 5%;
   background: linear-gradient(135deg, #1a0a10 0%, #2d1520 100%);
+  width: 100%;
 }
 
 .appreciation-grid {
@@ -423,6 +438,7 @@ footer {
   text-align: center;
   border-top: 1px solid rgba(212, 175, 55, 0.2);
   background: rgba(26, 10, 16, 0.95);
+  width: 100%;
 }
 
 footer p {
@@ -440,17 +456,14 @@ footer .heart {
   .main-title {
     font-size: 36px;
   }
-  
   .section-title {
     font-size: 28px;
   }
-  
   #music-player {
     width: 90%;
     bottom: 10px;
     right: 5%;
   }
-  
   .love-letter {
     padding: 30px;
   }
