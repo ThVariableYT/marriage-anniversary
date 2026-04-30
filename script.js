@@ -114,7 +114,7 @@ function parseLRC(text) {
 }
 
 // --- Fetch Lyrics from GitHub Raw ---
-const lyricsURL = `https://raw.githubusercontent.com/${MUSIC_CONFIG.GITHUB_USER}/${MUSIC_CONFIG.REPO_NAME}/${MUSIC_CONFIG.BRANCH}/${MUSIC_CONFIG.LYRICS_FILE}`;
+const lyricsURL = `https://raw.githubusercontent.com/ThVariableYT/marriage-anniversary/main/02%20-%20Dil%20Diyan%20Gallan.lrc`;
 
 lyricCurrent.textContent = '♪ Loading lyrics…';
 fetch(lyricsURL)
