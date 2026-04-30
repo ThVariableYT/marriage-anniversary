@@ -249,14 +249,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'background: linear-gradient(135deg, #e75480, #d4af37); color: white; font-size: 20px; padding: 20px; border-radius: 10px;');
 
     
-  // Fix: Trigger visibility for sections already in viewport on page load
-  setTimeout(() => {
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        section.classList.add('visible');
-      }
-    });
-  }, 100);
-});
+    // Fix: Make all sections visible immediately
+  sections.forEach(section => {
+    section.classList.add('visible');
+  });;
 
