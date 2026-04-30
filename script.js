@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // └─────────────────────────────────────────────┘
 const MUSIC_CONFIG = {
   GITHUB_USER: 'ThVariableYT',
-  REPO_NAME:   'your-repo-name',  // ← Change to your GitHub repo name
+  REPO_NAME:   'marriage-anniversary',  // ← Change to your GitHub repo name
   BRANCH:      'main',
-  LYRICS_FILE: 'lyrics.lrc'       // ← Change ONLY this to your .lrc filename
+  LYRICS_FILE: '02 - Dil Diyan Gallan.lrc'       // ← Change ONLY this to your .lrc filename
 };
 // ──────────────────────────────────────────────
 
