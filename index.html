@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 20th Anniversary Mom & Dad!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div id="hearts-container"></div>
+
+    <!-- Dark Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Audio Player - Hidden -->
+    <audio id="bg-music" loop>
+        <source src="02 - Dil Diyan Gallan.flac" type="audio/flac">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Custom Music Player -->
+    <div id="music-player" class="music-player">
+        <div class="player-bar">
+            <span class="now-playing">Now Playing: Anniversary Love Song</span>
+            <div class="player-controls">
+                <button id="play-pause-btn" class="player-btn">Play</button>
+                <input type="range" id="volume-slider" min="0" max="100" value="50">
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="nav" class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#our-story">Our Story</a></li>
+            <li><a href="#memories">Memories</a></li>
+            <li><a href="#love-letter">Love Letter</a></li>
+            <li><a href="#appreciation">Appreciation</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+        <div class="home-content">
+            <div class="anniversary-badge">
+                <span class="years">20</span>
+                <span class="years-text">YEARS</span>
+            </div>
+            <h1 class="main-title typing-text">To the Most Beautiful Souls</h1>
+            <h2 class="subtitle">Amar</h2>
+            <h2 class="subtitle">&</h2>
+            <h2 class="subtitle">Sarika</h2>
+            <p class="tagline"></p>
+            <p class="celebration-text"></p>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="our-story" class="section story-section">
+        <div class="section-container">
+            <div class="section-title">
+                <span class="heart-icon">&#10084;</span>
+                <h2>Our Beautiful Journey</h2>
+                <span class="heart-icon">&#10084;</span>
+            </div>
+            <div class="story-content">
+                <div class="story-card card-left">
+                    <div class="story-year">2006</div>
+                    <div class="story-text">
+                        <h3>The Beginning</h3>
+                        <p>Two souls met, two hearts connected. What started as a beautiful meeting of two unbeknownst souls blossomed into the most precious love story. Every moment since has been a blessing.</p>
+                    </div>
+                </div>
+                <div class="story-card card-center">
+                    <div class="story-year">The Journey</div>
+                    <div class="story-text">
+                        <h3>Building Dreams Together</h3>
+                        <p>Through every challenge and every triumph, through laughter and tears, you stood together. Your commitment to each other became the foundation of our family.</p>
+                    </div>
+                </div>
+                <div class="story-card card-right">
+                    <div class="story-year">2026</div>
+                    <div class="story-text">
+                        <h3>20 Years of Pure Love</h3>
+                        <p>Two decades of unconditional love, sacrifices, and endless support. Your marriage isn't just a relationship - it's a masterpiece painted with dedication, patience, and love.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memories Gallery Section -->
+    <section id="memories" class="section memories-section">
+        <div class="section-container">
+            <div class="section-title">
+                <span class="heart-icon">&#10084;</span>
+                <h2>Our Precious Memories</h2>
+                <span class="heart-icon">&#10084;</span>
+            </div>
+            <p class="section-subtitle">A collection of moments that made us smile, laugh, and cry tears of joy!</p>
+            
+            <div class="photo-gallery">
+                <div class="photo-card" data-title="The Wedding Day">
+                    <div class="photo-placeholder placeholder-1">
+                        <div class="photo-label">Wedding Day Photo</div>
+                        <div class="photo-overlay">Add your beautiful wedding photo here!</div>
+                    </div>
+                </div>
+                <div class="photo-card" data-title="Family Moments">
+                    <div class="photo-placeholder placeholder-2">
+                        <div class="photo-label">Family Moments</div>
+                        <div class="photo-overlay">Add a family photo here!</div>
+                    </div>
+                </div>
+                <div class="photo-card" data-title="Anniversary Celebrations">
+                    <div class="photo-placeholder placeholder-3">
+                        <div class="photo-label">Celebrating Together</div>
+                        <div class="photo-overlay">Add an anniversary photo here!</div>
+                    </div>
+                </div>
+                <div class="photo-card" data-title="Vacation Memories">
+                    <div class="photo-placeholder placeholder-4">
+                        <div class="photo-label">Vacation Memories</div>
+                        <div class="photo-overlay">Add a vacation photo here!</div>
+                    </div>
+                </div>
+                <div class="photo-card" data-title="Moments of Laughter">
+                    <div class="photo-placeholder placeholder-5">
+                        <div class="photo-label">Moments of Laughter</div>
+                        <div class="photo-overlay">Add a candid happy photo here!</div>
+                    </div>
+                </div>
+                <div class="photo-card" data-title="Special Occasions">
+                    <div class="photo-placeholder placeholder-6">
+                        <div class="photo-label">Special Occasions</div>
+                        <div class="photo-overlay">Add a special occasion photo here!</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="memory-message">
+                <p>This gallery is waiting to be filled with more of your beautiful photographs. Each frame tells a story of love, laughter, and togetherness that has shaped our family. I hope this continues forever and our loving bond is never broken.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Letter Section -->
+    <section id="love-letter" class="section love-letter-section">
+        <div class="section-container">
+            <div class="section-title">
+                <span class="heart-icon">&#10084;</span>
+                <h2>A Letter From My Heart</h2>
+                <span class="heart-icon">&#10084;</span>
+            </div>
+            
+            <div class="letter-wrapper">
+                <div class="letter-paper">
+                    <div class="letter-header">
+                        <div class="letter-date">April 30, 2026</div>
+                        <div class="letter-from">With All My Love, Your Child</div>
+                    </div>
+                    
+                    <div class="letter-content">
+                        <p class="letter-salutation">Dearest Mom and Dad,</p>
+                        
+                        <p>As I sit down to write this, words feel too small to capture what I truly feel. Twenty years. Two decades of unwavering love, patience, and sacrifice. I cannot imagine a world where you two aren't together, because your love has been the very foundation of everything good in my life.</p>
+                        
+                        <p>Mom, you are the heartbeat of our home. Your warmth, your endless prayers, your gentle guidance, and the way you always put everyone before yourself has taught me what true love looks like. Every meal you've cooked with love, every story you've told me, every worry you've carried silently - all of it has shaped who I am today.</p>
+                        
+                        <p>Dad, you are the strength that holds us together. Your hard work, your wisdom, your quiet dedication, and the way you always make sure our family has everything we need has shown me what it means to be a protector and a provider. Every lesson you've taught me, every time you've been there for me, every sacrifice you've made without complaint - has made me the person I am today.</p>
+                        
+                        <p>But most importantly, watching the two of you together has been the greatest lesson in love I've ever received. The way you still smile at each other after all these years, the way you support each other through thick and thin, the way you've built a home filled with love, laughter, and memories - this is what I aspire to have one day.</p>
+                        
+                        <p>Twenty years is not just a number. It's 7,300 days of choosing each other. It's thousands of moments of forgiveness, understanding, and unconditional love. It's a lifetime of memories that I have been blessed to witness and be a part of.</p>
+                        
+                        <p>Thank you for being the most amazing parents anyone could ask for. Thank you for loving each other so that I could learn what love truly means. Thank you for being my role models, my guides, my safe place.</p>
+                        
+                        <p>This website is a small token of my love for you two. I hope it brings a smile to your faces, just as you have brought countless smiles to mine.</p>
+                        
+                        <p>I love you both more than words can ever express. Here's to 20 years of beautiful togetherness, and to many, many more years of love, laughter, and happiness.</p>
+                        
+                        <p class="letter-closing">Happy 20th Anniversary, with all my love,</p>
+                        <p class="letter-signature">Jash</p>
+                    </div>
+                    
+                    <div class="letter-footer">
+                        <span class="heart-icon large">&#10084;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appreciation Section -->
+    <section id="appreciation" class="section appreciation-section">
+        <div class="section-container">
+            <div class="section-title">
+                <span class="heart-icon">&#10084;</span>
+                <h2>What Makes You Special</h2>
+                <span class="heart-icon">&#10084;</span>
+            </div>
+            <p class="section-subtitle">Reasons why your marriage is the most beautiful thing I've ever witnessed</p>
+            
+            <div class="appreciation-grid">
+                <div class="appreciation-card appreciation-card-1">
+                    <div class="card-icon">&#128155;</div>
+                    <h3>Unconditional Love</h3>
+                    <p>You love without conditions, without expectations, and without limits. Your love is the kind that Hollywood dreams about but you've lived it for 20 years.</p>
+                </div>
+                <div class="appreciation-card appreciation-card-2">
+                    <div class="card-icon">&#128147;</div>
+                    <h3>Unbreakable Bond</h3>
+                    <p>No matter what life has thrown your way, you've always faced it together. Your strength as a team inspires everyone around you.</p>
+                </div>
+                <div class="appreciation-card appreciation-card-3">
+                    <div class="card-icon">&#128218;</div>
+                    <h3>Lessons of Life</h3>
+                    <p>You've taught me more about life, love, and relationships than any book or movie ever could. Your daily actions speak louder than any words.</p>
+                </div>
+                <div class="appreciation-card appreciation-card-4">
+                    <div class="card-icon">&#127775;</div>
+                    <h3>Sacrifice & Dedication</h3>
+                    <p>The countless sacrifices you've made for our family never went unnoticed. You put us first, always, and that is the purest form of love.</p>
+                </div>
+                <div class="appreciation-card appreciation-card-5">
+                    <div class="card-icon">&#128516;</div>
+                    <h3>Endless Support</h3>
+                    <p>Through every high and every low, you've been each other's biggest cheerleader. That's the secret ingredient of your lasting love.</p>
+                </div>
+                <div class="appreciation-card appreciation-card-6">
+                    <div class="card-icon">&#127873;</div>
+                    <h3>A Beautiful Home</h3>
+                    <p>The home you've built isn't just walls and furniture - it's filled with warmth, laughter, traditions, and memories that will last forever.</p>
+                </div>
+            </div>
+            
+            <div class="final-wish">
+                <div class="final-wish-content">
+                    <h2 class="final-wish-title">Here's to You!</h2>
+                    <p class="final-wish-text">May your love continue to grow stronger with each passing day. May every year bring you more joy, more laughter, and more beautiful memories to cherish together. May health and happiness always be by your side. May you continue to be the shining example of what true love looks like.</p>
+                    <p class="final-wish-text">Your story has already inspired so many. Here's to writing many more chapters of your beautiful love story together.</p>
+                </div>
+            </div>
+            
+            <div class="final-celebration">
+                <h1 class="congratulations-text">Happy 20th Anniversary!</h1>
+                <p class="congratulations-sub">Thank you for being the best parents in the world</p>
+                <div class="fireworks-container" id="fireworks"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="section closing-section">
+        <div class="closing-content">
+            <div class="heart-beat-large">&#10084;</div>
+            <h2>Made with all my love,</h2>
+            <p>For the two most wonderful people in my life</p>
+            <p class="made-with">Made by Your Loving Child with &#10084;</p>
+            <p class="year">April 30, 2026</p>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
