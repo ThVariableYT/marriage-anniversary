@@ -102,6 +102,34 @@ body {
     padding: 10px 20px;
     box-shadow: 0 10px 40px rgba(231, 84, 128, 0.5);
     animation: pulse-glow 3s ease-in-out infinite;
+
+    /* --- Move Music Player to Middle-Left --- */
+.music-player {
+  position: fixed !important;
+  top: 50% !important;
+  left: 20px !important;
+  bottom: auto !important;
+  right: auto !important;
+  transform: translateY(-50%) !important;
+}
+/* --- Make Music Player Semi-Transparent --- */
+.music-player {
+  /* The "0.4" at the end of these colors controls transparency (0.0 is invisible, 1.0 is solid) */
+  background: linear-gradient(135deg, rgba(231, 84, 128, 0.4), rgba(212, 175, 55, 0.4)) !important;
+  backdrop-filter: blur(12px) !important; /* Keeps the glass-like blur effect */
+}
+
+/* Optional: Make the lyrics popup match the transparent style */
+.lyrics-popup {
+  background: rgba(15, 8, 15, 0.5) !important;
+  backdrop-filter: blur(12px) !important;
+}
+/* Make lyrics popup appear above the centered player */
+.lyrics-popup {
+  left: 0 !important;
+  right: auto !important;
+  bottom: calc(100% + 12px) !important;
+}
 }
 
 @keyframes pulse-glow {
