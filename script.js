@@ -247,5 +247,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // ====================================
     console.log('%c Made with all my love for Mom & Dad ', 
         'background: linear-gradient(135deg, #e75480, #d4af37); color: white; font-size: 20px; padding: 20px; border-radius: 10px;');
+
     
+  // Fix: Trigger visibility for sections already in viewport on page load
+  setTimeout(() => {
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        section.classList.add('visible');
+      }
+    });
+  }, 100);
 });
+
